@@ -1,4 +1,6 @@
-import boom  from './boom.wav';
+import {Howl} from 'howler';
+
+import boom from './boom.wav';
 import clap from './clap.wav'
 import hihat from './hihat.wav'
 import kick from './kick.wav'
@@ -18,4 +20,23 @@ export const audio = {
     snare: snare,
     tink: tink,
     tom: tom
+}
+
+//play sound using Howler
+export const playSound = (sound: any) => {
+    const soundPlay = new Howl({
+        src: [sound]
+    })
+    soundPlay.play()
+}
+
+//call playSound function when key is pressed
+export const useKeyPress = (targetKey: string, sound: string) => {
+    const keyPress = (e: any) => {
+        if (e.key === targetKey) {
+            playSound(sound)
+        }
+    }
+    window.addEventListener('keydown', keyPress)
+    return keyPress
 }
