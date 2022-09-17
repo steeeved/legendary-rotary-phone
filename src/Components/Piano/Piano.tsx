@@ -1,9 +1,5 @@
 import Styles from './Piano.module.scss';
-import { audio } from '../Audio/index';
-import ReactAudioPlayer from 'react-audio-player';
-import { Howl } from 'howler';
-import { playSound, useKeyPress } from '../Audio/index';
-
+import { useKeyPress, audio } from '../Audio/index';
 
 export const Piano = () => {
   //add keydown event listener
@@ -22,8 +18,6 @@ export const Piano = () => {
     const div = document.querySelector(`div[data-key="${e.keyCode}"]`);
     if (div) {
       div.classList.add(Styles.Playing);
-      // div.classList.remove(Styles.Btn);
-      //console.log(div?.classList)
     }
   });
 
@@ -33,7 +27,6 @@ export const Piano = () => {
     if (div) {
       div.classList.remove(Styles.Playing);
     }
-    // console.log(div?.classList)
   });
 
   return (
