@@ -30,13 +30,6 @@
       text-shadow: 0 0 0.5rem var(--border-color);
       transition: all 0.1s ease;
 
-      &:hover {
-        background: rgba(0, 0, 0, 0.6);
-        transform: scale(1.1);
-        border-color: var(--sound-color);
-        box-shadow: 0 0 1rem #ffc600;
-      }
-
       kbd {
         display: block;
         font-size: 4rem;
@@ -49,4 +42,11 @@
       }
     }
   }
+}
+
+.Playing {
+  background: rgba(0, 0, 0, 0.6);
+  border: 0.4rem solid var(--sound-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem var(--sound-color);
 }
